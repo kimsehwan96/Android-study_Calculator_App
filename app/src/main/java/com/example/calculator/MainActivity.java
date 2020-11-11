@@ -10,37 +10,130 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
-    TextView textview = (TextView) findViewById(R.id.textView);
-    Button btn1 = (Button) findViewById(R.id.btn1);
-    Button btn2 = (Button) findViewById(R.id.btn2);
-    Button btn3 = (Button) findViewById(R.id.btn3);
-    Button btn4 = (Button) findViewById(R.id.btn4);
-    Button btn5 = (Button) findViewById(R.id.btn5);
-    Button btn6 = (Button) findViewById(R.id.btn6);
-    Button btn7 = (Button) findViewById(R.id.btn7);
-    Button btn8 = (Button) findViewById(R.id.btn8);
-    Button btn9 = (Button) findViewById(R.id.btn9);
-    Button btn0 = (Button) findViewById(R.id.btn0);
 
+    Calculator cal = new Calculator();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Calculator cal = new Calculator();
 
     }
 
     public void putNum(View view) {
-        /*
-        if (view.getId() == R.id.btn1){
-            textview.setText("1");
+        TextView textview = (TextView) findViewById(R.id.textView);
+        if (view.getId() == R.id.btn1) {
+            this.cal.putStringBuffer("1");
+            textview.setText(this.cal.getStringBuffer());
         }
         else if (view.getId() == R.id.btn2){
-            textview.setText("2");
+            this.cal.putStringBuffer("2");
+            textview.setText(this.cal.getStringBuffer());
         }
+        else if (view.getId() == R.id.btn3){
+            this.cal.putStringBuffer("3");
+            textview.setText(this.cal.getStringBuffer());
+        }
+        else if (view.getId() == R.id.btn4){
+            this.cal.putStringBuffer("4");
+            textview.setText(this.cal.getStringBuffer());
+        }
+        else if (view.getId() == R.id.btn5){
+            this.cal.putStringBuffer("5");
+            textview.setText(this.cal.getStringBuffer());
+        }
+        else if (view.getId() == R.id.btn6){
+            this.cal.putStringBuffer("6");
+            textview.setText(this.cal.getStringBuffer());
+        }
+        else if (view.getId() == R.id.btn7){
+            this.cal.putStringBuffer("7");
+            textview.setText(this.cal.getStringBuffer());
+        }
+        else if (view.getId() == R.id.btn8){
+            this.cal.putStringBuffer("8");
+            textview.setText(this.cal.getStringBuffer());
+        }
+        else if (view.getId() == R.id.btn9){
+            this.cal.putStringBuffer("9");
+            textview.setText(this.cal.getStringBuffer());
+        }
+        else if (view.getId() == R.id.btn0){
+            this.cal.putStringBuffer("0");
+            textview.setText(this.cal.getStringBuffer());
+        }
+        else if (view.getId() == R.id.btndot){
+            this.cal.putStringBuffer(".");
+            textview.setText(this.cal.getStringBuffer());
+        }
+
         else {
             textview.setText("No input");
-        }*/
+        }
+    }
+
+    public void command(View view) {
+        TextView textview_second = (TextView) findViewById(R.id.textView);
+        if (view.getId() == R.id.btnAC) {
+            this.cal.resetBuffer();
+            textview_second.setText(this.cal.getStringBuffer());
+        }
+
+        else {
+            if (this.cal.getStringBuffer() != ""){
+
+                if (view.getId() == R.id.btnplus) {
+                    this.cal.setCommand(1);
+                    this.cal.putNumberBuffer();
+                    textview_second.setText(this.cal.getStringBuffer());
+                }
+                else if (view.getId() == R.id.btnminus) {
+                    this.cal.setCommand(2);
+                    this.cal.putNumberBuffer();
+                    textview_second.setText(this.cal.getStringBuffer());
+                }
+                else if (view.getId() == R.id.btnmul){
+                    this.cal.setCommand(3);
+                    this.cal.putNumberBuffer();
+                    textview_second.setText(this.cal.getStringBuffer());
+                }
+                else if (view.getId() == R.id.btndiv) {
+                    this.cal.setCommand(4);
+                    this.cal.putNumberBuffer();
+                    textview_second.setText(this.cal.getStringBuffer());
+                }
+                else if (view.getId() == R.id.btnequal) {
+                    this.cal.calculate();
+                    textview_second.setText(this.cal.getCalculateResult());
+
+                }
+
+            }
+            else {
+                if (view.getId() == R.id.btnplus) {
+                    this.cal.setCommand(1);
+                    textview_second.setText(this.cal.getStringBuffer());
+                }
+                else if (view.getId() == R.id.btnminus) {
+                    this.cal.setCommand(2);
+                    textview_second.setText(this.cal.getStringBuffer());
+                }
+                else if (view.getId() == R.id.btnmul){
+                    this.cal.setCommand(3);
+                    textview_second.setText(this.cal.getStringBuffer());
+                }
+                else if (view.getId() == R.id.btndiv) {
+                    this.cal.setCommand(4);
+                    textview_second.setText(this.cal.getStringBuffer());
+                }
+                else if (view.getId() == R.id.btnequal) {
+                    this.cal.calculate();
+                    textview_second.setText(this.cal.getCalculateResult());
+
+                }
+            }
+        }
+
+
     }
 }

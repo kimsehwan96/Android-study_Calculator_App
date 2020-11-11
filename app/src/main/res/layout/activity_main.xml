@@ -89,7 +89,8 @@
                     android:id="@+id/btndot"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="." />
+                    android:text="."
+                    android:onClick="putNum"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -187,7 +188,9 @@
                     android:id="@+id/btn6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="6" />
+                    android:text="6"
+                    android:onClick="putNum"
+                    />
             </LinearLayout>
 
             <LinearLayout
@@ -211,10 +214,11 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/btnconv"
+                    android:id="@+id/btnequal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="+/-" />
+                    android:text="="
+                    android:onClick="command"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -235,7 +239,8 @@
                     android:id="@+id/btnplus"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="+" />
+                    android:text="+"
+                    android:onClick="command"/>
             </LinearLayout>
 
             <LinearLayout
@@ -248,7 +253,8 @@
                     android:id="@+id/btnminus"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="-" />
+                    android:text="-"
+                    android:onClick="command"/>
             </LinearLayout>
 
             <LinearLayout
@@ -261,7 +267,8 @@
                     android:id="@+id/btnmul"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="*" />
+                    android:text="*"
+                    android:onClick="command"/>
             </LinearLayout>
 
             <LinearLayout
@@ -274,7 +281,8 @@
                     android:id="@+id/btndiv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="/" />
+                    android:text="/"
+                    android:onClick="command"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -294,7 +302,8 @@
                     android:id="@+id/btnAC"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="AC" />
+                    android:text="AC"
+                    android:onClick="command"/>
             </LinearLayout>
 
             <LinearLayout
@@ -307,7 +316,8 @@
                     android:id="@+id/btnpercent"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="%" />
+                    android:text="%"
+                    android:onClick="command"/>
             </LinearLayout>
 
             <LinearLayout
@@ -320,7 +330,8 @@
                     android:id="@+id/btnroot"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="root" />
+                    android:text="root"
+                    android:onClick="command"/>
             </LinearLayout>
 
             <LinearLayout
@@ -333,7 +344,8 @@
                     android:id="@+id/btnexp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="^" />
+                    android:text="^"
+                    android:onClick="command"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
